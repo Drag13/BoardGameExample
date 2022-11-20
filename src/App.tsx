@@ -3,6 +3,8 @@ import { rnd } from "./utils/math";
 import { createMatrix, Matrix, setMatrixValue } from "./utils/matrix";
 import "./App.css";
 
+const MATRIX_SIZE = +import.meta.env.VITE_FIELD_SIZE ?? 3;
+
 const GameStatus = {
   NotStarted: "not-started",
   Revealed: "revealed",
@@ -18,7 +20,6 @@ type GameState = {
   letter: string;
 };
 
-const MATRIX_SIZE = 4;
 const LETTERS_POOL = ["A", "B"];
 
 const getRandomLetter = (pool: string[]) => pool[rnd(pool.length)];
